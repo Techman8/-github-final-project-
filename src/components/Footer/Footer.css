@@ -1,0 +1,97 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 104px; /* Perfectly matches your main layout margins */
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+.footer__copyright {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF; 
+  margin: 0;
+}
+
+/* Structural resource navigation panel */
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 42px; 
+}
+
+/* Sub-groups for text vs visual icons */
+.footer__text-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.footer__icon-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation anchors shared profile specs */
+.footer__link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1A1A1D;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__icon-link {
+  color: #1A1A1D; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Interactive feedback visual properties */
+.footer__link:hover,
+.footer__icon-link:hover {
+  opacity: 0.6;
+}
+
+.footer__icon-link:hover {
+  transform: scale(1.08); /* Gives social elements a modern interactive pop */
+}
+
+.footer__icon {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column-reverse; /* Pushes copyright to bottom on tiny screens */
+    align-items: flex-start;
+    padding: 20px 16px;
+    gap: 40px;
+  }
+  
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 18px;
+  }
+  
+  .footer__text-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  
+  .footer__icon-links {
+    gap: 24px;
+    margin-top: 10px; /* Separates text elements from icons when stacked vertically */
+  }
+}

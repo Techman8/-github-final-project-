@@ -1,0 +1,49 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The Hero Section (Holds your dark header and centered search form) */
+.main__hero {
+  position: relative; /* Essential: Lets us anchor items cleanly inside the hero boundary */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px; /* Adjust this height threshold to match your desktop Figma design */
+  background-image: url('../../images/geometrical-hero-bg.jpg'); /* Swap out with your actual asset path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding-top: 80px; /* Matches the exact header height so your SearchForm doesn't get clipped underneath */
+}
+
+/* Optional Layout Override for Header when placed inside the Hero */
+.main__hero .header {
+  position: absolute; /* Pins the header to the exact ceiling of the hero block */
+  top: 0;
+  left: 0;
+  background-color: transparent; /* Guarantees the hero background shows through underneath */
+}
+
+/* ==========================================================================
+   3. Companion Element Layout Previews (Preloader, List, About)
+   ========================================================================== */
+
+/* Preloader Center Placement */
+.main__preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+/* Content Sections Base Framework */
+.main__card-list,
+.main__about {
+  width: 100%;
+  box-sizing: border-box;
+}

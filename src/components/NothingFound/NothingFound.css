@@ -1,0 +1,54 @@
+.nothing-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 80px 0;
+  background-color: #F5F6F7;
+  box-sizing: border-box;
+}
+
+.nothing-found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 448px;
+  text-align: center;
+}
+
+/* Graphics frame icons overlays */
+.nothing-found__icon {
+  width: 96px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 24px;
+}
+
+.nothing-found__icon_type_search {
+  /* Magnifying glass graphic icon asset marker */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='96' height='96' fill='none'%3E%3Ccircle cx='44' cy='44' r='14' stroke='%3C%23B6BCBF' stroke-width='2'/%3E%3Cpath stroke='%23B6BCBF' stroke-width='2' d='M54 54l16 16'/%3E%3C/svg%3E");
+}
+
+.nothing-found__icon_type_error {
+  /* Warning exclamation icon graphic asset marker */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='96' height='96' fill='none'%3E%3Ccircle cx='48' cy='48' r='20' stroke='%23FF4040' stroke-width='2'/%3E%3Cpath stroke='%23FF4040' stroke-width='2' d='M48 36v16M48 60h.01' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* Typography styles matching Figma */
+.nothing-found__title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  color: #1A1A1D;
+  margin: 0 0 16px 0;
+}
+
+.nothing-found__description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #B6BCBF;
+  margin: 0;
+}

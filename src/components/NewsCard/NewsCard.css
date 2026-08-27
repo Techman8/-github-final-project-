@@ -1,0 +1,65 @@
+.news-card__image-container {
+  position: relative;
+  overflow: hidden; 
+}
+
+.news-card__actions {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.news-card__tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.news-card__action-btn {
+  cursor: pointer;
+  border: none;
+  background: #ffffff;
+  border-radius: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.news-card__action-btn:focus-visible {
+  outline: 2px solid #2f71e5;
+}
+
+.news-card__tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 4px;
+  background-color: #ffffff;
+  color: #000000;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.news-card__tooltip-wrapper:hover .news-card__tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.news-card__action-btn_type_delete .news-card__icon {
+  stroke: #B6BCBF;
+  fill: none;
+  transition: stroke 0.2s ease;
+}
+
+.news-card__action-btn_type_delete:hover .news-card__icon {
+  stroke: #1A1A1D; /* Turns dark charcoal gray on hover */
+}
+
+/* Positions the "Remove from saved" text bubble tooltip nicely when hovering over the trash can icon zone */
+.news-card__tooltip-wrapper:hover .news-card__tooltip {
+  opacity: 1;
+  visibility: visible;
+}

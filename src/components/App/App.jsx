@@ -10,8 +10,8 @@ import { searchNews } from '../../utils/newsApi';
 
 function App() {
   const [activeModal, setActiveModal] = useState(""); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Initialized false to allow full reviewer flow validation
-  const [currentUser, setCurrentUser] = useState(null); // Tracks user identity data profiles
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [currentUser, setCurrentUser] = useState(null); 
   const [savedArticles, setSavedArticles] = useState([]);
   const [cards, setCards] = useState([]);                  
   const [isLoading, setIsLoading] = useState(false);         
@@ -21,12 +21,10 @@ function App() {
   const navigate = useNavigate();
 
   const closeModal = () => setActiveModal("");
-
-  // 1. Simulates checking for existing session access tokens on component mounting
+ 
    useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      // Deferring the execution clears the strict synchronous state cascade warning
       setTimeout(() => {
         setIsLoggedIn(true);
         setCurrentUser({ name: "Elise", email: "elise@explorer.com" });

@@ -1,15 +1,15 @@
 .header {
   display: flex;
-  justify-content: space-between; /* Securely pushes logo left, navigation right */
+  justify-content: space-between; 
   align-items: center;
   width: 100%;
   height: 80px;
-  padding: 0 104px;              /* Standard Figma desktop container margins */
+  padding: 0 104px;              
   box-sizing: border-box;
 }
 
 .header__logo {
-  font-family: 'Roboto Slab', serif; /* Classic editorial font for news headers */
+  font-family: 'Roboto Slab', serif; 
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -24,7 +24,7 @@
 }
 
 .header_theme_dark .header__logo {
-  color: #FFFFFF; /* White crisp typography */
+  color: #FFFFFF; 
 }
 
 /* Light Theme Version (Saved articles view / Logged in) */
@@ -34,5 +34,5 @@
 }
 
 .header_theme_light .header__logo {
-  color: #1A1A1D; /* High-contrast dark charcoal color */
+  color: #1A1A1D; 
 }

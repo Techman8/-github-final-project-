@@ -1,5 +1,5 @@
 const BASE_URL = import.meta.env.DEV
-  ? "https://newsapi.org"
+  ? "https://newsapi.org/v2/everything"
   : "https://nomoreparties.co";
 
 const API_KEY = "d0952e3adac34c8ca6eae59956b85caf"; 
@@ -26,8 +26,5 @@ export const searchNews = (keyword) => {
 
   return fetch(url, {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json"
-    }
   }).then(checkResponse);
 };

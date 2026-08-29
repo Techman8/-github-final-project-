@@ -4,16 +4,15 @@
   flex-direction: column;
 }
 
-/* The Hero Section (Holds your dark header and centered search form) */
 .main__hero {
-  position: relative; /* Essential: Lets us anchor items cleanly inside the hero boundary */
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 200px; /* Adjust this height threshold to match your desktop Figma design */
-  background-image: url('../../images/geometrical-hero-bg.jpg'); /* Swap out with your actual asset path */
+  min-height: 200px; 
+  background-image: url('../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

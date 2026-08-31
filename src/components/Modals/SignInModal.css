@@ -1,0 +1,106 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+/* WHITE CARD WINDOW CONTAINER */
+.modal {
+  background: #ffffff;
+  color: #000000;
+  width: 100%;
+  max-width: 430px;
+  border-radius: 16px;
+  padding: 32px 24px;
+  position: relative;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* CLOSE 'X' BUTTON OVERLAY POSITIONING */
+.modal__close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .modal__close-btn {
+    top: 16px;
+    right: 16px;
+    color: #000000;
+    font-size: 28px;
+  }
+}
+
+.modal__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* FORM FIELD COMPONENT BLOCKS */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-group__label {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-bottom: 8px;
+}
+
+.form-group__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  font-size: 16px;
+  font-family: inherit;
+  color: #000000;
+  outline: none;
+}
+
+.form-group__input:focus {
+  border-bottom: 1px solid #2f71e5;
+}
+
+/* ACCENT BLUE ACTION SUBMIT PILL */
+.modal__submit-btn {
+  width: 100%;
+  background: #2f71e5;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.modal__footer-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.modal__link {
+  color: #2f71e5;
+  text-decoration: none;
+  font-weight: 500;
+}

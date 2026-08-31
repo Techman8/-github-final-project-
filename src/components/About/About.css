@@ -2,22 +2,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 56px; /* Spaces the circular headshot away from the text column */
+  gap: 56px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 80px 104px; /* Matches identical header, content, and footer layout margins */
+  padding: 80px 104px;
   box-sizing: border-box;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .about__image {
   width: 464px;
   height: 464px;
-  border-radius: 50%; /* Perfect circular framing style */
-  object-fit: cover;   /* Prevents portrait orientation distortion */
+  border-radius: 50%;
+  object-fit: cover;
   object-position: center;
-  background-color: #E6E6E6; /* UI placeholder layer while images load */
+  background-color: #e6e6e6;
   flex-shrink: 0;
 }
 
@@ -27,19 +27,19 @@
 }
 
 .about__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
-  color: #1A1A1D;
+  color: #1a1a1d;
   margin: 0 0 24px 0;
 }
 
 .about__description {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 24px;
-  color: #1A1A1D;
+  color: #1a1a1d;
   margin: 0;
 }
 
@@ -48,7 +48,7 @@
     padding: 40px 40px;
     gap: 32px;
   }
-  
+
   .about__image {
     width: 320px;
     height: 320px;
@@ -57,10 +57,9 @@
 
 @media screen and (max-width: 768px) {
   .about {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    text-align: left;
-    padding: 32px 16px;
+    padding: 32px 16px 48px 16px;
     gap: 24px;
   }
 
@@ -68,10 +67,18 @@
     width: 272px;
     height: 272px;
   }
-  
+
   .about__title {
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 16px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .about__description {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
   }
 }

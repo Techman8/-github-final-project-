@@ -2,145 +2,180 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
-/* Dim Backdrop Overlay Element */
 .modal__overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dimming layer */
-  backdrop-filter: blur(4px);            /* Elegant high-fidelity modern background blur */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
   cursor: pointer;
 }
 
-/* ==========================================================================
-   2. Main Container Box Elements
-   ========================================================================== */
+/* The primary form container card */
 .modal__container {
-  position: relative;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
+  background: #ffffff;
+  color: #000000;
   width: 100%;
-  max-width: 430px; /* Standard sleek modal box width configuration */
+  max-width: 430px;
+  border-radius: 16px;
   padding: 34px 36px 28px 36px;
+  position: relative;
+  z-index: 101;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
-  z-index: 101; /* Layer keeps content safely above the interactive overlay */
 }
 
-/* Close "X" Element button configuration */
 .modal__close-button {
   position: absolute;
-  top: -40px;     /* Places the close cross right above the window frame on desktop screens */
+  top: -40px;
   right: -40px;
-  width: 26px;
-  height: 26px;
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='26' height='26' fill='none'%3E%3Cpath stroke='%23fff' stroke-width='2' d='M1 1l24 24M25 1L1 25'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.2s ease;
+  padding: 0;
+  transition: opacity 0.2s ease;
+
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 300;
 }
 
 .modal__close-button:hover {
-  transform: scale(1.15);
+  opacity: 0.7;
 }
 
-/* ==========================================================================
-   3. Inner Layout Typography & Form Elements
-   ========================================================================== */
 .modal__title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  margin-bottom: 22px;
   color: #000000;
-  margin: 0 0 22px 0;
 }
 
 .modal__form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-/* Styling for children elements passed dynamically (labels and inputs) */
 .modal__label {
-  font-family: 'Inter', sans-serif;
+  display: block;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   line-height: 14px;
-  color: #A0A0A0;
+  color: #7a7a7a;
+  margin-top: 20px;
   margin-bottom: 8px;
+  text-align: left;
+}
+
+.modal__title + .modal__label {
+  margin-top: 10px;
 }
 
 .modal__input {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
+  width: 100%;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0 0 8px 0;
-  margin-bottom: 24px;
-  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Thin bottom baseline */
+  padding: 8px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
   background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.modal__input::placeholder {
+  color: #b2b2b2;
 }
 
 .modal__input:focus {
-  border-bottom-color: #2F80ED; /* Blue underline on active entry focus states */
+  border-bottom-color: #2f71e5;
 }
 
-/* ==========================================================================
-   4. Action Buttons & Switch Anchors
-   ========================================================================== */
 .modal__submit-button {
   width: 100%;
-  height: 64px;
-  background: #2F80ED;
-  box-shadow: 0px 5px 15px rgba(47, 128, 237, 0.2);
-  border-radius: 100px;
+  background: #2f71e5;
+  color: #ffffff;
   border: none;
-  font-family: 'Roboto', sans-serif;
+  padding: 16px;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #FFFFFF;
   cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 16px;
+  margin-top: 28px;
+  box-shadow: 0px 5px 15px rgba(47, 113, 229, 0.2);
   transition: background-color 0.2s ease;
 }
 
 .modal__submit-button:hover {
-  background-color: #2567c2;
+  background: #255bc4;
 }
 
 .modal__alt-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 17px;
   text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
   color: #000000;
-  margin: 0;
+  margin-top: 16px;
 }
 
 .modal__alt-link {
-  font-weight: 500;
-  color: #2F80ED;
+  color: #2f71e5;
   cursor: pointer;
+  font-weight: 500;
   margin-left: 4px;
+  transition: opacity 0.2s;
 }
 
 .modal__alt-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 16px;
+  }
+
+  .modal__container {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .modal__close-button {
+    top: 16px;
+    right: 16px;
+    color: #000000;
+    font-size: 28px;
+  }
+
+  .modal__label {
+    margin-top: 16px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+    padding: 10px 0;
+  }
 }

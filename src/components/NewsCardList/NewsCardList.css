@@ -8,7 +8,7 @@
 
 .news-cards__title {
   align-self: flex-start;
-  font-family: 'Roboto Slab', Georgia, serif;
+  font-family: "Roboto Slab", Georgia, serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 1.15;
@@ -29,13 +29,15 @@
   border: 1px solid #1a1b22;
   border-radius: 80px;
   padding: 20px 48px;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
   color: #1a1b22;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .news-cards__more-btn:hover {
@@ -48,12 +50,12 @@
   .news-cards {
     padding: 40px 40px;
   }
-  
+
   .news-cards__title {
     font-size: 30px;
     margin-bottom: 32px;
   }
-  
+
   .news-cards__grid {
     gap: 8px;
     margin-bottom: 32px;
@@ -65,12 +67,12 @@
   .news-cards {
     padding: 32px 16px;
   }
-  
+
   .news-cards__grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .news-cards__more-btn {
     width: 100%;
     padding: 16px 0;

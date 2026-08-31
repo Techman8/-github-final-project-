@@ -5,32 +5,41 @@
 }
 
 .main__hero {
-  position: relative; 
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 200px; 
-  background-image: url('../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png');
+  min-height: 540px;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  padding-top: 80px; /* Matches the exact header height so your SearchForm doesn't get clipped underneath */
+  padding-top: 80px;
 }
 
-/* Optional Layout Override for Header when placed inside the Hero */
 .main__hero .header {
-  position: absolute; /* Pins the header to the exact ceiling of the hero block */
+  position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent; /* Guarantees the hero background shows through underneath */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
 }
 
-/* ==========================================================================
-   3. Companion Element Layout Previews (Preloader, List, About)
-   ========================================================================== */
+.main__results {
+  width: 100%;
+  background-color: #f5f6f7;
+  padding: 80px 104px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Preloader Center Placement */
 .main__preloader {
@@ -45,4 +54,30 @@
 .main__about {
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main__hero {
+    min-height: 480px;
+    padding-top: 56px;
+    background-position: 35% center;
+  }
+
+  .main__results {
+    padding: 40px 40px;
+  }
+
+  .main__preloader {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main__hero {
+    min-height: 436px;
+  }
+
+  .main__results {
+    padding: 32px 16px;
+  }
 }

@@ -1,4 +1,4 @@
-import './NothingFound.css';
+import "./NothingFound.css";
 
 export default function NothingFound({ errorText }) {
   return (
@@ -15,7 +15,9 @@ export default function NothingFound({ errorText }) {
           <>
             <div className="nothing-found__icon nothing-found__icon_type_search" />
             <h3 className="nothing-found__title">Nothing Found</h3>
-            <p className="nothing-found__description">Sorry, but nothing matched your search terms.</p>
+            <p className="nothing-found__description">
+              Sorry, but nothing matched your search terms.
+            </p>
           </>
         )}
       </div>

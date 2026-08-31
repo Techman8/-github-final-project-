@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   padding: 80px 0;
-  background-color: #F5F6F7; /* Distinct clean background strip color */
+  background-color: #f5f6f7; /* Distinct clean background strip color */
   box-sizing: border-box;
 }
 
@@ -31,15 +31,15 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  animation: spin .75s infinite linear; /* Infinite smooth rotation loop */
+  animation: spin 0.75s infinite linear; /* Infinite smooth rotation loop */
 }
 
 .preloader__text {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  color: #B6BCBF; /* Soft gray typography */
+  color: #b6bcbf; /* Soft gray typography */
   margin-top: 74px; /* Safely pushes text message below the absolute spinner zone */
   text-align: center;
 }

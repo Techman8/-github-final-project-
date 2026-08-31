@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'; 
-import Navigation from '../Navigation/Navigation';
-import './Header.css';
+import { Link } from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
+import "./Header.css";
 
 function Header({ isLoggedIn, onLoginClick, theme, onLogout }) {
   return (
@@ -8,12 +8,12 @@ function Header({ isLoggedIn, onLoginClick, theme, onLogout }) {
       <Link to="/" className="header__logo">
         NewsExplorer
       </Link>
-      
-      <Navigation 
-        isLoggedIn={isLoggedIn} 
-        onLoginClick={onLoginClick} 
-        onLogout={onLogout} 
-        theme={theme} 
+
+      <Navigation
+        isLoggedIn={isLoggedIn}
+        onLoginClick={onLoginClick}
+        onLogout={onLogout}
+        theme={theme}
       />
     </header>
   );

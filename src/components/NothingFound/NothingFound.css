@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   padding: 80px 0;
-  background-color: #F5F6F7;
+  background-color: #f5f6f7;
   box-sizing: border-box;
 }
 
@@ -37,18 +37,18 @@
 
 /* Typography styles matching Figma */
 .nothing-found__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-size: 26px;
   line-height: 30px;
-  color: #1A1A1D;
+  color: #1a1a1d;
   margin: 0 0 16px 0;
 }
 
 .nothing-found__description {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 22px;
-  color: #B6BCBF;
+  color: #b6bcbf;
   margin: 0;
 }

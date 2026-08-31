@@ -1,28 +1,28 @@
-import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import './App.css';
-import Main from '../Main/Main';
-import SavedNews from '../SavedNews/SavedNews';
-import Footer from '../Footer/Footer';
-import LoginModal from '../Modals/LoginModal/LoginModal';
-import RegisterModal from '../Modals/RegisterModal/RegisterModal';
-import { searchNews } from '../../utils/newsApi'; 
+import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import "./App.css";
+import Main from "../Main/Main";
+import SavedNews from "../SavedNews/SavedNews";
+import Footer from "../Footer/Footer";
+import LoginModal from "../Modals/LoginModal/LoginModal";
+import RegisterModal from "../Modals/RegisterModal/RegisterModal";
+import { searchNews } from "../../utils/newsApi";
 
 function App() {
-  const [activeModal, setActiveModal] = useState(""); 
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-  const [currentUser, setCurrentUser] = useState(null); 
+  const [activeModal, setActiveModal] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
   const [savedArticles, setSavedArticles] = useState([]);
-  const [cards, setCards] = useState([]);                  
-  const [isLoading, setIsLoading] = useState(false);         
-  const [apiError, setApiError] = useState("");              
-  const [searchAttempted, setSearchAttempted] = useState(false); 
+  const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [apiError, setApiError] = useState("");
+  const [searchAttempted, setSearchAttempted] = useState(false);
 
   const navigate = useNavigate();
 
   const closeModal = () => setActiveModal("");
- 
-   useEffect(() => {
+
+  useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
       setTimeout(() => {
@@ -34,7 +34,7 @@ function App() {
 
   useEffect(() => {
     if (!activeModal) return;
-    
+
     const handleEscClose = (e) => {
       if (e.key === "Escape") closeModal();
     };
@@ -57,7 +57,11 @@ function App() {
   };
 
   const handleRegisterSubmit = (email, password, username) => {
-    console.log("Simulating mock registration fields setup:", { email, password, username });
+    console.log("Simulating mock registration fields setup:", {
+      email,
+      password,
+      username,
+    });
     return new Promise((resolve) => {
       setTimeout(() => {
         setActiveModal("login");
@@ -70,10 +74,10 @@ function App() {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
-    setSavedArticles([]); 
+    setSavedArticles([]);
     setCards([]);
     setSearchAttempted(false);
-    navigate("/"); 
+    navigate("/");
   };
 
   const handleSearchSubmit = (keyword) => {
@@ -86,29 +90,33 @@ function App() {
       .then((data) => {
         if (data.articles) {
           const formattedCards = data.articles.map((article, index) => ({
-            id: article.url + index, 
+            id: article.url + index,
             urlToImage: article.urlToImage,
             publishedAt: article.publishedAt,
             title: article.title,
             description: article.description,
             source: article.source.name,
-            keyword: keyword 
+            keyword: keyword,
           }));
           setCards(formattedCards);
         }
       })
       .catch((err) => {
         console.error(err);
-        setApiError("Sorry, something went wrong during the request. Please try again later.");
+        setApiError(
+          "Sorry, something went wrong during the request. Please try again later.",
+        );
       })
       .finally(() => {
-        setIsLoading(false); 
+        setIsLoading(false);
       });
   };
 
   const handleCardSaveToggle = (clickedCard) => {
     setSavedArticles((prevSaved) => {
-      const isAlreadySaved = prevSaved.some((item) => item.id === clickedCard.id);
+      const isAlreadySaved = prevSaved.some(
+        (item) => item.id === clickedCard.id,
+      );
       if (isAlreadySaved) {
         return prevSaved.filter((item) => item.id !== clickedCard.id);
       } else {
@@ -120,53 +128,53 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
-            <Main 
-              isLoggedIn={isLoggedIn} 
-              onLoginClick={() => setActiveModal("login")} 
-              onLogout={handleLogout} 
-              onSearch={handleSearchSubmit} 
-              cards={cards} 
-              isLoading={isLoading}         
-              apiError={apiError}           
-              searchAttempted={searchAttempted} 
+            <Main
+              isLoggedIn={isLoggedIn}
+              onLoginClick={() => setActiveModal("login")}
+              onLogout={handleLogout}
+              onSearch={handleSearchSubmit}
+              cards={cards}
+              isLoading={isLoading}
+              apiError={apiError}
+              searchAttempted={searchAttempted}
               savedArticles={savedArticles}
               onCardSave={handleCardSaveToggle}
             />
-          } 
+          }
         />
-        
-        <Route 
-          path="/saved-news" 
+
+        <Route
+          path="/saved-news"
           element={
-            <SavedNews 
-              isLoggedIn={isLoggedIn} 
-              currentUser={currentUser} 
-              onLogout={handleLogout} 
-              savedArticles={savedArticles} 
+            <SavedNews
+              isLoggedIn={isLoggedIn}
+              currentUser={currentUser}
+              onLogout={handleLogout}
+              savedArticles={savedArticles}
               onCardDelete={handleCardSaveToggle}
             />
-          } 
+          }
         />
       </Routes>
 
       <Footer />
 
       {activeModal === "login" && (
-        <LoginModal 
-          isOpen={true} 
-          onClose={closeModal} 
-          onAltLinkClick={() => setActiveModal("register")} 
+        <LoginModal
+          isOpen={true}
+          onClose={closeModal}
+          onAltLinkClick={() => setActiveModal("register")}
           onLogin={handleLoginSubmit}
         />
       )}
       {activeModal === "register" && (
-        <RegisterModal 
-          isOpen={true} 
-          onClose={closeModal} 
-          onAltLinkClick={() => setActiveModal("login")} 
+        <RegisterModal
+          isOpen={true}
+          onClose={closeModal}
+          onAltLinkClick={() => setActiveModal("login")}
           onRegister={handleRegisterSubmit}
         />
       )}

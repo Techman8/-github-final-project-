@@ -13,7 +13,6 @@
   padding: 16px;
 }
 
-/* WHITE CARD WINDOW CONTAINER */
 .modal {
   background: #ffffff;
   color: #000000;
@@ -25,7 +24,6 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* CLOSE 'X' BUTTON OVERLAY POSITIONING */
 .modal__close-btn {
   position: absolute;
   top: -40px;
@@ -52,7 +50,6 @@
   margin-bottom: 24px;
 }
 
-/* FORM FIELD COMPONENT BLOCKS */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -79,7 +76,6 @@
   border-bottom: 1px solid #2f71e5;
 }
 
-/* ACCENT BLUE ACTION SUBMIT PILL */
 .modal__submit-btn {
   width: 100%;
   background: #2f71e5;

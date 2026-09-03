@@ -1,4 +1,6 @@
 import "./NewsCard.css";
+import bookmark from "../../images/bookmark.svg";
+import trash from "../../images/trash.svg";
 
 export default function NewsCard({
   image,
@@ -27,12 +29,12 @@ export default function NewsCard({
   return (
     <article className="news-card">
       <div className="news-card__image-container">
-        <img
-          src={image || null}
-          alt={image ? title : ""}
-          className="news-card__image"
+        <img 
+          src={image || ""} 
+          alt={image ? title : "News banner placeholder"} 
+          className="news-card__image" 
         />
-
+        
         <div className="news-card__actions">
           <div className="news-card__tooltip-wrapper">
             <button
@@ -40,47 +42,13 @@ export default function NewsCard({
               className={`news-card__action-btn news-card__action-btn_type_${isMainPage ? "save" : "delete"} ${
                 isMainPage && isSaved ? "news-card__action-btn_state_saved" : ""
               }`}
-              aria-label={
-                isMainPage
-                  ? isSaved
-                    ? "Unsave article"
-                    : "Save article"
-                  : "Remove article"
-              }
+              aria-label={isMainPage ? (isSaved ? "Unsave article" : "Save article") : "Remove article"}
               onClick={isLoggedIn ? onCardAction : undefined}
             >
               {isMainPage ? (
-                <svg
-                  className="news-card__icon"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M5 3h14a2 2 0 0 1 2 2v16l-9-5-9 5V5a2 2 0 0 1 2-2z"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img src={bookmark} alt="" className="news-card__icon" />
               ) : (
-                <svg
-                  className="news-card__icon"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img src={trash} alt="" className="news-card__icon" />
               )}
             </button>
 

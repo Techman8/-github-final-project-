@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import { searchNews } from "../../utils/newsApi";
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -149,6 +150,7 @@ function App() {
         <Route
           path="/saved-news"
           element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
             <SavedNews
               isLoggedIn={isLoggedIn}
               currentUser={currentUser}
@@ -156,6 +158,7 @@ function App() {
               savedArticles={savedArticles}
               onCardDelete={handleCardSaveToggle}
             />
+            </ProtectedRoute>
           }
         />
       </Routes>

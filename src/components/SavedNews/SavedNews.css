@@ -3,22 +3,23 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f5f6f7; /* Off-white background distinct from Main hero */
+  background-color: #f5f6f7; 
 }
 
 .saved-news__info-block {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 104px 56px 104px; /* Standard horizontal margins matching Header */
+  padding: 40px 104px 56px 104px; 
   box-sizing: border-box;
+  text-align: left;
 }
 
 .saved-news__subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 24px;
-  color: rgba(26, 26, 29, 0.4); /* Muted slate sub-label */
+  color: rgba(26, 26, 29, 0.4); 
   display: block;
   margin-bottom: 28px;
 }
@@ -31,7 +32,8 @@
   line-height: 46px;
   color: #1a1a1d;
   margin: 0 0 30px 0;
-  max-width: 530px; /* Prevents long titles from stretching full width */
+  max-width: 100%; 
+  display: block;
 }
 
 .saved-news__keywords {
@@ -55,7 +57,7 @@
   flex-grow: 1;
 }
 
-/* Empty State Handling Elements */
+
 .saved-news__empty-state {
   display: flex;
   justify-content: center;

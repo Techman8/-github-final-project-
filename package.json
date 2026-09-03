@@ -2,7 +2,7 @@
   "name": "my-frontend-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/Techman8/-github-final-project.io/news-explorer-frontend/",
+  "homepage": "https://techman8.github.io/-github-final-project-/",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,4 +1,5 @@
 import "./ModalWithForm.css";
+import closebutton from "../../../images/close-button.png";
 
 function ModalWithForm({
   children,
@@ -16,14 +17,13 @@ function ModalWithForm({
     <div className="modal">
       <div className="modal__overlay" onClick={onClose} />
       <div className="modal__container">
-        {/* Added HTML character entity &times; for a clean, scaleable vector cross */}
         <button
           type="button"
           className="modal__close-button"
           onClick={onClose}
           aria-label="Close modal"
         >
-          &times;
+           <img src={closebutton} alt="Close modal" className="modal__close-icon" />
         </button>
         <h2 className="modal__title">{title}</h2>
         <form className="modal__form" onSubmit={onSubmit}>

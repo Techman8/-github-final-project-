@@ -1,0 +1,83 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 540px;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding-top: 80px;
+}
+
+.main__hero .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.main__results {
+  width: 100%;
+  background-color: #f5f6f7;
+  padding: 80px 104px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Preloader Center Placement */
+.main__preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+/* Content Sections Base Framework */
+.main__card-list,
+.main__about {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main__hero {
+    min-height: 480px;
+    padding-top: 56px;
+    background-position: 35% center;
+  }
+
+  .main__results {
+    padding: 40px 40px;
+  }
+
+  .main__preloader {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main__hero {
+    min-height: 436px;
+  }
+
+  .main__results {
+    padding: 32px 16px;
+  }
+}

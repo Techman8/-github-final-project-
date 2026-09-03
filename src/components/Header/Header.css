@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 104px;   
+  padding-right: 116px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header__logo {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+  user-select: none;
+  margin: 0;             
+  color: rgba(255, 255, 255, 1);    
+}
+
+/* Dark Theme Version (Main home page / Logged out) */
+.header_theme_dark {
+  background-color: transparent;
+  box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.2);
+}
+
+.header_theme_dark .header__logo {
+  color: #ffffff;
+}
+
+/* Light Theme Version (Saved articles view / Logged in) */
+.header_theme_light {
+  background-color: #ffffff;
+  box-shadow: inset 0px -1px 0px 0px rgba(196, 196, 196, 0.2);
+  position: relative;
+}
+
+.header_theme_light .header__logo {
+  color: #1a1a1d;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 56px;
+    padding: 0 16px;
+  }
+
+  .header__logo {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

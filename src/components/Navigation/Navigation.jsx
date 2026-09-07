@@ -20,16 +20,17 @@ function Navigation({ isLoggedIn, onLoginClick, onLogout, theme }) {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `navigation__link navigation__link_theme_${theme} ${isActive ? "navigation__link_active" : ""}`
+              `navigation__link ${isActive ? "navigation__link_active" : ""}`
             }
           >
             Home
           </NavLink>
+
           {isLoggedIn && (
             <NavLink
               to="/saved-news"
               className={({ isActive }) =>
-                `navigation__link navigation__link_theme_${theme} ${isActive ? "navigation__link_active" : ""}`
+                `navigation__link ${isActive ? "navigation__link_active" : ""}`
               }
             >
               Saved articles
@@ -42,8 +43,7 @@ function Navigation({ isLoggedIn, onLoginClick, onLogout, theme }) {
             className="navigation__button navigation__button_type_logout"
             onClick={onLogout}
           >
-            User
-            <span className="navigation__logout-icon"></span>
+            Elise <span className="navigation__logout-icon"></span>
           </button>
         ) : (
           <button
@@ -102,8 +102,7 @@ function Navigation({ isLoggedIn, onLoginClick, onLogout, theme }) {
                     onLogout();
                   }}
                 >
-                  User
-                  <span className="navigation__logout-icon"></span>
+                  Elise <span className="navigation__logout-icon"></span>
                 </button>
               </li>
             </>

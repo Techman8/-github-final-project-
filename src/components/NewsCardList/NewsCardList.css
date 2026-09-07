@@ -1,3 +1,26 @@
+.news-cards {
+  background-color: #f5f6f7;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.news-cards__title {
+  align-self: flex-start;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.15;
+  color: #1a1b22;
+  margin: 0 0 64px 0;
+  width: 100%;
+  max-width: 1232px;
+}
+
 .news-cards__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
@@ -15,10 +38,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 100%;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.05);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 .news-card:hover {
@@ -196,6 +221,40 @@
   margin-top: auto;
 }
 
+.news-cards__more-btn {
+  display: block;
+  width: 288px;
+  height: 64px;
+  margin: 64px auto 0 auto;
+  background: #e8e8e8;
+  border: none;
+  border-radius: 80px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 64px;
+  color: #1a1a1d;
+  text-align: center;
+}
+
+.news-cards__more-btn:hover {
+  background-color: #dcdcdc;
+}
+
+@media (max-width: 1024px) {
+  .news-cards {
+    padding: 40px 24px;
+  }
+  .news-cards__title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .news-cards__grid {
     grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
@@ -207,6 +266,10 @@
 }
 
 @media (max-width: 540px) {
+  .news-cards {
+    padding: 32px 16px;
+  }
+
   .news-cards__grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -220,5 +283,25 @@
   .news-card__title {
     font-size: 16px;
     line-height: 22px;
+  }
+
+  .news-cards__more-btn {
+    width: 240px;
+    height: 56px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 80px;
+    border: none;
+    margin: 40px auto 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px 0;
+    box-sizing: border-box;
+    color: rgba(26, 27, 34, 1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

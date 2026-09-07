@@ -23,7 +23,6 @@
   gap: 32px;
 }
 
-/* Base Shared Typography & Reset */
 .navigation__link,
 .navigation__button {
   font-family: "Roboto", sans-serif;
@@ -38,7 +37,6 @@
   cursor: pointer;
 }
 
-/* Link & Button States */
 .navigation__link {
   transition: opacity 0.2s ease;
 }
@@ -53,13 +51,12 @@
   padding-top: 26px;
 }
 
-/* Specific button shapes based on Figma layouts */
 .navigation__button_type_login,
 .navigation__button_type_logout {
   border: 1px solid currentColor;
   padding: 12px;
   border-radius: 100px;
-  transition: opacity 0.2s;
+  transition: opacity 0.2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +124,6 @@
   margin-left: 4px;
 }
 
-/* The arrow shaft exiting the open rectangle frame */
 .navigation__logout-icon::after {
   content: "";
   position: absolute;
@@ -164,9 +160,9 @@
     height: auto;
     background: transparent !important;
     box-shadow: none !important;
+    position: static;
   }
 
-  /* BURGER OPEN BUTTON */
   .header__burger-btn {
     display: flex;
     flex-direction: column;
@@ -198,12 +194,12 @@
     border-radius: 2px;
   }
 
-  /* MOBILE FULL-WIDTH DROPDOWN OVERLAY OVERRIDES */
   .nav-overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
     background-color: #1a1a24;
     border-radius: 0 0 16px 16px;
     padding: 16px 16px 32px 16px;
@@ -264,7 +260,6 @@
     text-align: left;
   }
 
-  /* White Border Pill Actions inside Mobile Menus */
   .nav-overlay__signin-btn {
     width: 100%;
     background: transparent;
@@ -281,7 +276,6 @@
     box-sizing: border-box;
   }
 
-  /* Reset layout constraints inside the overlay logout button wrapper */
   .nav-overlay__btn-override {
     margin-left: 0 !important;
     width: 100%;

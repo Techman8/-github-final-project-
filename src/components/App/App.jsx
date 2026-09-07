@@ -7,7 +7,8 @@ import Footer from "../Footer/Footer";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import { searchNews } from "../../utils/newsApi";
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import RegisterSuccessModal from "../RegisterSuccessModal/RegisterSuccessModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -65,7 +66,7 @@ function App() {
     });
     return new Promise((resolve) => {
       setTimeout(() => {
-        setActiveModal("login");
+        setActiveModal("success");
         resolve();
       }, 800);
     });
@@ -151,13 +152,13 @@ function App() {
           path="/saved-news"
           element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
-            <SavedNews
-              isLoggedIn={isLoggedIn}
-              currentUser={currentUser}
-              onLogout={handleLogout}
-              savedArticles={savedArticles}
-              onCardDelete={handleCardSaveToggle}
-            />
+              <SavedNews
+                isLoggedIn={isLoggedIn}
+                currentUser={currentUser}
+                onLogout={handleLogout}
+                savedArticles={savedArticles}
+                onCardDelete={handleCardSaveToggle}
+              />
             </ProtectedRoute>
           }
         />
@@ -179,6 +180,13 @@ function App() {
           onClose={closeModal}
           onAltLinkClick={() => setActiveModal("login")}
           onRegister={handleRegisterSubmit}
+        />
+      )}
+      {activeModal === "success" && (
+        <RegisterSuccessModal
+          isOpen={true}
+          onClose={closeModal}
+          onSignInClick={() => setActiveModal("login")}
         />
       )}
     </div>

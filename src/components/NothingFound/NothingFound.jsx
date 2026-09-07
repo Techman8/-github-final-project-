@@ -1,22 +1,26 @@
 import "./NothingFound.css";
+import figmaIcon from "../../images/not-found_v1.png";
 
 export default function NothingFound({ errorText }) {
   return (
     <div className="nothing-found">
       <div className="nothing-found__container">
-        {/* If an error prop is passed, display the error layout variant configuration */}
         {errorText ? (
           <>
             <div className="nothing-found__icon nothing-found__icon_type_error" />
-            <h3 className="nothing-found__title">An error occurred</h3>
+            <h2 className="nothing-found__title">An error occurred</h2>
             <p className="nothing-found__description">{errorText}</p>
           </>
         ) : (
           <>
-            <div className="nothing-found__icon nothing-found__icon_type_search" />
-            <h3 className="nothing-found__title">Nothing Found</h3>
+            <img
+              src={figmaIcon}
+              alt="Nothing found icon"
+              className="nothing-found__icon"
+            />
+            <h2 className="nothing-found__title">Nothing found</h2>
             <p className="nothing-found__description">
-              Sorry, but nothing matched your search terms.
+              Sorry, but nothing matched your search results.
             </p>
           </>
         )}

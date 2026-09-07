@@ -64,7 +64,7 @@
   align-items: center;
   justify-content: center;
   width: 152px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -78,7 +78,7 @@
 }
 
 .navigation__button_type_login {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;

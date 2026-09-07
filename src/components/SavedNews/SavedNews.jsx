@@ -4,13 +4,12 @@ import "./SavedNews.css";
 
 export default function SavedNews({
   isLoggedIn,
-  currentUser /* 1. Accept your new user state parameter profile prop */,
+  currentUser,
   savedArticles,
   onCardDelete,
   onNavigateToHome,
   onLogout,
 }) {
-  // Dynamic Keyword Logic: Extracts unique keywords and sorts them by frequency
   const getKeywordSummary = () => {
     const keywords = savedArticles
       .map((article) => article.keyword)
@@ -39,11 +38,9 @@ export default function SavedNews({
         onLogout={onLogout}
       />
 
-      {/* Info Author/Summary Block */}
       <section className="saved-news__info-block">
         <span className="saved-news__subtitle">Saved articles</span>
         <h2 className="saved-news__title">
-          {/* 2. Dynamically displays the logged in user's name (e.g., "Elise") */}
           {currentUser ? currentUser.name : "User"}, you have{" "}
           {savedArticles.length} saved article
           {savedArticles.length !== 1 ? "s" : ""}
@@ -59,7 +56,6 @@ export default function SavedNews({
         )}
       </section>
 
-      {/* Main Content Grid Area */}
       <main className="saved-news__content">
         {savedArticles.length > 0 ? (
           <NewsCardList

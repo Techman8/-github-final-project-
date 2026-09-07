@@ -1,6 +1,6 @@
 import "./NewsCard.css";
 import bookmark from "../../images/bookmark.svg";
-import trash from "../../images/trash.svg";
+import trash from "../../images/trash.png";
 
 export default function NewsCard({
   image,
@@ -29,12 +29,12 @@ export default function NewsCard({
   return (
     <article className="news-card">
       <div className="news-card__image-container">
-        <img 
-          src={image || ""} 
-          alt={image ? title : "News banner placeholder"} 
-          className="news-card__image" 
+        <img
+          src={image || ""}
+          alt={image ? title : "News banner placeholder"}
+          className="news-card__image"
         />
-        
+
         <div className="news-card__actions">
           <div className="news-card__tooltip-wrapper">
             <button
@@ -42,8 +42,21 @@ export default function NewsCard({
               className={`news-card__action-btn news-card__action-btn_type_${isMainPage ? "save" : "delete"} ${
                 isMainPage && isSaved ? "news-card__action-btn_state_saved" : ""
               }`}
-              aria-label={isMainPage ? (isSaved ? "Unsave article" : "Save article") : "Remove article"}
-              onClick={isLoggedIn ? onCardAction : undefined}
+              aria-label={
+                isMainPage
+                  ? isSaved
+                    ? "Unsave article"
+                    : "Save article"
+                  : "Remove article"
+              }
+              /* FIXED: Safely permits click action handoffs on saved page contexts */
+              onClick={
+                isMainPage
+                  ? isLoggedIn
+                    ? onCardAction
+                    : undefined
+                  : onCardAction
+              }
             >
               {isMainPage ? (
                 <img src={bookmark} alt="" className="news-card__icon" />
@@ -57,7 +70,8 @@ export default function NewsCard({
                 Sign in to save articles
               </span>
             )}
-            {isLoggedIn && !isMainPage && (
+
+            {!isMainPage && (
               <span className="news-card__tooltip" role="tooltip">
                 Remove from saved
               </span>

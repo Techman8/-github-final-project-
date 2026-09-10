@@ -1,0 +1,124 @@
+.registersuccess-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.registersuccess-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.registersuccess-modal__wrapper {
+  position: relative;
+  width: 430px;
+  height: 182px;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+
+.registersuccess-modal__close-btn {
+  position: absolute;
+  top: -46px;
+  right: -46px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.registersuccess-modal__close-btn:hover {
+  opacity: 0.7;
+}
+
+.registersuccess-modal__card {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  padding: 43px 36px 51px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.registersuccess-modal__title {
+  width: 100%;
+  max-width: 315px;
+  margin: 0 0 13px 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 1);
+  text-align: left;
+}
+
+.registersuccess-modal__link {
+  width: auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(47, 113, 229, 1);
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.registersuccess-modal__close-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.registersuccess-modal__link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 640px) {
+  .registersuccess-modal__wrapper {
+    width: 320px;
+    height: 560px;
+    top: 56px;
+  }
+
+  .registersuccess-modal__card {
+    border-radius: 0px;
+    padding: 72px 16px 16px 16px;
+  }
+
+  .registersuccess-modal__close-btn {
+    top: 16px;
+    left: 280px;
+    right: auto;
+    width: 24px;
+    height: 24px;
+  }
+
+  .registersuccess-modal__title {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}

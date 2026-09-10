@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# External or Vendor code
+src/assets/vendor/
+*.min.css
+*.min.js
+
+# Config and system files
+.DS_Store
+coverage/

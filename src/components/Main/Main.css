@@ -1,0 +1,106 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1440px;
+  height: 576px;
+  margin: 0 auto;
+  background-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 80px 104px 48px 104px;
+}
+
+.main__hero .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  padding: 0 104px;
+}
+
+.main__results {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f5f6f7;
+  padding: 80px 104px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.main__card-list,
+.main__about {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .main__hero {
+    height: auto;
+    min-height: 480px;
+    padding: 56px 40px 40px 40px;
+    background-position: 35% center;
+    align-items: center;
+  }
+  .main__hero .header {
+    padding: 0 40px;
+  }
+  .main__results {
+    padding: 40px 40px;
+  }
+  .main__preloader {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main__hero {
+    width: 100%;
+    max-width: 320px;
+    height: 536px;
+    min-height: 536px;
+    margin: 0 auto;
+    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .main__hero .header {
+    width: 100%;
+    height: 56px;
+    padding: 0;
+    background: rgba(196, 196, 196, 0.01);
+    box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+  }
+
+  .main__results {
+    padding: 32px 16px;
+  }
+}

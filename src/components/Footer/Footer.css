@@ -1,0 +1,142 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 104px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.footer__copyright {
+  font-family: "Roboto", sans-serif;
+  width: 433px;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(182, 188, 191, 1);
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer__text-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__icon-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.footer__link {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  width: 49px;
+  font-size: 18px;
+  line-height: 24px;
+  color: rgba(26, 27, 34, 1);
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer__icon-link {
+  color: #1a1a1d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer__link:hover,
+.footer__icon-link:hover {
+  opacity: 0.6;
+}
+
+.footer__icon-link:hover {
+  transform: scale(1.08);
+}
+
+.footer__icon {
+  display: block;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 640px) {
+  .footer {
+    position: relative;
+    width: 320px;
+    height: 176px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+  }
+
+  .footer__text-links {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    width: 200px;
+    height: 72px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .footer__link {
+    font-size: 18px;
+    line-height: 48px;
+    width: auto;
+  }
+
+  .footer__icon-links {
+    position: absolute;
+    top: 22px;
+    right: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .footer__icon_type_github {
+    width: 20.21px;
+    height: 19.71px;
+  }
+
+  .footer__icon_type_linkedin {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__copyright {
+    position: absolute;
+    top: 132px;
+    left: 16px;
+    width: 288px;
+    height: 22px;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer__links {
+    display: contents;
+  }
+}
